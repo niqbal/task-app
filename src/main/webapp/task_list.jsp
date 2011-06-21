@@ -31,7 +31,7 @@
 		</table>
 		<p/>
 		<form action="" method="post">
-			<input type="button" name="New Task" value="New Task" onclick="location.href='new.jsp'"/>
+			<input type="button" name="New Task" value="New Task" onclick="location.href='new_task.jsp'"/>
 		</form>
 	</jsp:body>
 

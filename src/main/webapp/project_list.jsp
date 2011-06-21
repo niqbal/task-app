@@ -11,7 +11,6 @@
 
 %>
 
-
 <tags:mainlayout>
 
 
@@ -31,7 +30,7 @@
 		</table>
 		<p/>
 		<form action="" method="post">
-			<input type="button" name="New Project" value="New Project" onclick="location.href='new.jsp'"/>
+			<input type="button" name="New Project" value="New Project" onclick="location.href='new_project.jsp'"/>
 		</form>
 	</jsp:body>
 

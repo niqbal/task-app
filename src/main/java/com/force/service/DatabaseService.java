@@ -1,5 +1,6 @@
 package com.force.service;
 
+import com.force.model.Project;
 import com.force.model.Task;
 
 import javax.persistence.EntityManager;
@@ -30,6 +31,13 @@ public class DatabaseService {
     public static Task getTask(String id) {
         EntityManager em = emf.createEntityManager();
         return em.find(Task.class, id);
+    }
+
+    public static void saveProject(Project p) {
+        EntityManager em = emf.createEntityManager();
+        EntityTransaction tx = em.getTransaction();
+        em.persist(p);
+        tx.begin();
     }
 
     public static void saveTask(Task t) {
