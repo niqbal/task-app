@@ -19,9 +19,11 @@ public class DatabaseService {
 
     public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("forceDatabase");
 
-    public static List<Task> getTaskList() {
+    private static String SEARCH_ALL = "Select o FROM %s o";
+
+    public static List<Task> getList(String clazz) {
         EntityManager em = emf.createEntityManager();
-        List l = em.createQuery("Select o FROM Task o").getResultList();
+        List l = em.createQuery(String.format(SEARCH_ALL, clazz)).getResultList();
         return l;
     }
 

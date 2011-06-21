@@ -1,17 +1,18 @@
 package com.force.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
  * User: niqbal
- * Date: 6/20/11
- * Time: 11:19 PM
+ * Date: 6/21/11
+ * Time: 2:29 PM
  * To change this template use File | Settings | File Templates.
  */
 
 @Entity
-public class Task {
+public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     String id;
@@ -20,17 +21,9 @@ public class Task {
 
     String desc;
 
-    @ManyToOne
-    Project project;
+    @OneToMany(mappedBy = "project")
+    List<Task> tasks;
 
-    public Task() {
-    }
-
-    public Task(String id, String name, String desc) {
-        this.id = id;
-        this.name = name;
-        this.desc = desc;
-    }
 
     public String getId() {
         return id;
@@ -54,5 +47,13 @@ public class Task {
 
     public void setDesc(String desc) {
         this.desc = desc;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 }
