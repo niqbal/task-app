@@ -7,6 +7,8 @@
 
 <%
     List list = DatabaseService.getTaskList();
+    request.setAttribute("list",list);
+
 %>
 
 
@@ -18,9 +20,9 @@
 	<jsp:body>
 		<table class="itemlist" width="100%">
 			<tr>
-				<th>Name</th><th>Origin</th><th>Career Start</th><th>Career End</th>
+				<th>Name</th><th>Desc</th>
 			</tr>
-			<c:forEach items="${DatabaseService.taskList}" var="task">
+			<c:forEach items="${list}" var="task">
 				<tr>
 					<td><a href="${task.id}">${task.name}</a></td>
 					<td>${task.desc}</td>
