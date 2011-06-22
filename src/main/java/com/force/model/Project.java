@@ -56,4 +56,10 @@ public class Project {
     public void setTasks(List<Task> tasks) {
         this.tasks = tasks;
     }
+
+    @Override
+    public String toString() {
+        String format = "Id:%s; Name:%s; Description:%s";
+        return String.format(format,id, name, desc);
+    }
 }

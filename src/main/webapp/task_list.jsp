@@ -11,21 +11,20 @@
 
 %>
 
-
 <tags:mainlayout>
-
 
 	<jsp:attribute name="breadcrumb"><a href="index.jsp">Home</a> / Tasks</jsp:attribute>
 	
 	<jsp:body>
 		<table class="itemlist" width="100%">
 			<tr>
-				<th>Name</th><th>Desc</th>
+				<th>Name</th><th>Description</th><th>Parent Project</th>
 			</tr>
 			<c:forEach items="${list}" var="task">
 				<tr>
-					<td><a href="${task.id}">${task.name}</a></td>
+                    <td><a href="new_task.jsp?id=${task.id}">${task.name}</a></td>
 					<td>${task.desc}</td>
+                    <td>${task.project.name}</td>
 				</tr>
 			</c:forEach>
 		</table>

@@ -14,7 +14,8 @@ public class BasicCRUD {
 
     @Test
     public void testCRUD() {
-        System.setProperty("force.forceDatabase.url","force://login.salesforce.com;user=user;password=password;oauth_key=3MVG9lKcPoNINVBJODzn4ACM0KkhPOusO7d_Cgj1DtVenib5TofzP7v1sZwpcwT8CJH4jLXbP5dBQLtUcstdq;oauth_secret=6275589123086961927");
+        //System.setProperty("force.forceDatabase.url","force://login.salesforce.com;user=user;password=password;oauth_key=key_key_key;oauth_secret=secret_secret");
+
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("forceDatabase");
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();

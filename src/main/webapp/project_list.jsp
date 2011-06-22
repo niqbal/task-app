@@ -8,7 +8,6 @@
 <%
     List list = DatabaseService.getList("Project");
     request.setAttribute("list",list);
-
 %>
 
 <tags:mainlayout>
@@ -23,7 +22,7 @@
 			</tr>
 			<c:forEach items="${list}" var="project">
 				<tr>
-					<td><a href="${project.id}">${project.name}</a></td>
+					<td><a href="new_project.jsp?id=${project.id}">${project.name}</a></td>
 					<td>${project.desc}</td>
 				</tr>
 			</c:forEach>

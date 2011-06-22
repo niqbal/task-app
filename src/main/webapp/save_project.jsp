@@ -10,16 +10,17 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
+    <jsp:setProperty name="project" property="*"/>
+
     <%
         DatabaseService.saveProject(project);
         response.sendRedirect("project_list.jsp");
-
     %>
 
 <html>
-<head><title>Simple jsp page</title></head>
+<head><title>Save page</title></head>
 
-<body>Place your content here</body>
+<body>Redirecting momentarily ...</body>
 
 
 </html>
