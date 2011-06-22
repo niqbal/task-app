@@ -12,12 +12,6 @@
 	<div id="header"><div id="app_title">Projects and Tasks</div></div>
 	<form action="" method="get">
 		<div id="navigation">${breadcrumb}
-			<c:if test="${hidesearch==null}">
-				<div style="float:right; white-space: nowrap">
-					 JPQL Where caluse i.e. <code>o.name='a'</code><input size="40" type="text" name="q" value="${param.q}"/>
-					<input type="submit" value="Go"/>
-				</div>
-			</c:if>
 		</div>
 	</form>
 	<div id="content">
