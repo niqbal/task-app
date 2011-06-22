@@ -50,7 +50,7 @@ public class DatabaseService {
         EntityManager em = emf.createEntityManager();
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        if (p.getId() !=  null) {
+        if (p.getId() !=  null && !"".equals(p.getId())) {
             Project p0 = em.find(Project.class, p.getId());
             p0.setName(p.getName());
             p0.setDesc(p.getDesc());
@@ -68,7 +68,7 @@ public class DatabaseService {
         logger.info("Saving: " + t.toString());
         EntityTransaction tx = em.getTransaction();
         tx.begin();
-        if (t.getId() !=  null) {
+        if (t.getId() !=  null && !"".equals(t.getId())) {
             Task t0 = em.find(Task.class, t.getId());
             t0.setName(t.getName());
             t0.setDesc(t.getDesc());
@@ -93,7 +93,7 @@ public class DatabaseService {
             Project p = em.find(Project.class, projectId);
 
 
-            if (t.getId() != null) {
+            if (t.getId() != null && !"".equals(t.getId())) {
                 for(Task t0: p.getTasks()) {
                     if (t0.getId().equals(t.getId())) {
                         t0.setName(t.getName());

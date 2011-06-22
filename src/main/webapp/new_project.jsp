@@ -1,16 +1,7 @@
-<%@ page import="com.force.service.DatabaseService" %>
-<%@ page import="com.force.model.Project" %>
 <jsp:useBean id="project" scope="request" class="com.force.model.Project" >
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
-    <%
-        if(request.getParameter("id") != null) {
-            Project p = DatabaseService.getProject(request.getParameter("id"));
-            request.setAttribute("project", p);
-        }
-    %>
 
 <tags:mainlayout>
 
@@ -18,9 +9,7 @@
     <jsp:attribute name="hidesearch">true</jsp:attribute>
 	<jsp:body>
 
-
-
-		<form action="save_project.jsp">
+        <form action="SaveProject" >
 		<table>
 			<tr>
                 <input type="hidden" size="40" name="id" value="${project.id}" />
@@ -33,13 +22,13 @@
 		<p/>
 
 		<input type="submit" value="Save"/>
-		<input type="button" value="Projects List" onclick="location.href='project_list.jsp'"/>
+		<input type="button" value="Projects List" onclick="location.href='ProjectList'"/>
 
 		</form>
 
 
         <c:if test="${project.id!=null}">
-        <form action="save_task.jsp">
+        <form action="SaveTask">
             <table>
                 <tr>
                     <input type="hidden" size="40" name="project_id" value="${project.id}" />

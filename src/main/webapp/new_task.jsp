@@ -1,23 +1,17 @@
-<%@ page import="com.force.service.DatabaseService" %>
-<jsp:useBean id="task" scope="request" class="com.force.model.Task" >
+ <jsp:useBean id="task" scope="request" class="com.force.model.Task" >
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-
-    <%
-        if(request.getParameter("id") != null) {
-            request.setAttribute("task", DatabaseService.getTask(request.getParameter("id")));
-        }
-    %>
-
+     hello world
+     <%= task.getName()%>
 <tags:mainlayout>
 
 	<jsp:attribute name="breadcrumb"><a href="index.jsp">Home</a> / <a href="task_list.jsp">Tasks</a> / ${task.name}</jsp:attribute>
     <jsp:attribute name="hidesearch">true</jsp:attribute>
 
 	<jsp:body>
-		<form action="save_task.jsp">
+		<form action="SaveTask">
 		<table>
 			<tr>
                 <input type="hidden" size="40" name="id" value="${task.id}" />
@@ -30,7 +24,7 @@
 		<p/>
 
 		<input type="submit" value="Save"/>
-		<input type="button" value="Tasks List" onclick="location.href='task_list.jsp'"/>
+		<input type="button" value="Tasks List" onclick="location.href='TaskList'"/>
 
 		</form>
 	</jsp:body>

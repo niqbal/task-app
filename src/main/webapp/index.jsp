@@ -8,9 +8,9 @@
 <jsp:attribute name="hidesearch">true</jsp:attribute>
 
 <jsp:body>
-<p><a href="task_list.jsp">Tasks</a></p>
+<p><a href="TaskList">Tasks</a></p>
 
-<p><a href="project_list.jsp">Projects</a></p>
+<p><a href="ProjectList">Projects</a></p>
 
 </jsp:body>
 </tags:mainlayout>
