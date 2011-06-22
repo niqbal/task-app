@@ -1,4 +1,4 @@
-<jsp:useBean id="project" scope="request" class="com.force.model.Project" >
+<jsp:useBean id="project" scope="request" class="com.force.model.Project" ></jsp:useBean>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -59,4 +59,3 @@
 
 
 </tags:mainlayout>
-</jsp:useBean>

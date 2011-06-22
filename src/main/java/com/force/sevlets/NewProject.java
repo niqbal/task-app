@@ -29,16 +29,9 @@ public class NewProject extends HttpServlet {
         if(request.getParameter("id") != null) {
             Project p = DatabaseService.getProject(request.getParameter("id"));
             request.setAttribute("project", p);
-            logger.info("here0");
         }
 
-        logger.info("here1");
-
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/new_project.jsp");
-        logger.info("here2");
-
-
         rd.forward(request, response);
-        logger.info("here3");
     }
 }

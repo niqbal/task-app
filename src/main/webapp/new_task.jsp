@@ -1,10 +1,8 @@
- <jsp:useBean id="task" scope="request" class="com.force.model.Task" >
+ <jsp:useBean id="task" scope="request" class="com.force.model.Task" ></jsp:useBean>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="tags" tagdir="/WEB-INF/tags" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-     hello world
-     <%= task.getName()%>
 <tags:mainlayout>
 
 	<jsp:attribute name="breadcrumb"><a href="index.jsp">Home</a> / <a href="task_list.jsp">Tasks</a> / ${task.name}</jsp:attribute>
@@ -28,6 +26,5 @@
 
 		</form>
 	</jsp:body>
-	
+
 </tags:mainlayout>
-</jsp:useBean>
