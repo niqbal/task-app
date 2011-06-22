@@ -8,8 +8,6 @@
 <jsp:attribute name="hidesearch">true</jsp:attribute>
 
 <jsp:body>
-<p><a href="TaskList">Tasks</a></p>
-
 <p><a href="ProjectList">Projects</a></p>
 
 </jsp:body>

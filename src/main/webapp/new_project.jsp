@@ -5,7 +5,7 @@
 
 <tags:mainlayout>
 
-	<jsp:attribute name="breadcrumb"><a href="index.jsp">Home</a> / <a href="project_list.jsp">Projects</a> / ${project.name}</jsp:attribute>
+	<jsp:attribute name="breadcrumb"><a href="index.jsp">Home</a> / <a href="ProjectList">Projects</a> / ${project.name}</jsp:attribute>
     <jsp:attribute name="hidesearch">true</jsp:attribute>
 	<jsp:body>
 

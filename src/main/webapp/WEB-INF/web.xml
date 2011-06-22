@@ -54,28 +54,6 @@
     </servlet-mapping>
 
     <servlet>
-        <display-name>TaskList</display-name>
-        <servlet-name>TaskList</servlet-name>
-        <servlet-class>com.force.sevlets.TaskList</servlet-class>
-        <load-on-startup>0</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>TaskList</servlet-name>
-        <url-pattern>/TaskList</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <display-name>NewTask</display-name>
-        <servlet-name>NewTask</servlet-name>
-        <servlet-class>com.force.sevlets.NewTask</servlet-class>
-        <load-on-startup>0</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>NewTask</servlet-name>
-        <url-pattern>/NewTask</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
         <display-name>NewProject</display-name>
         <servlet-name>NewProject</servlet-name>
         <servlet-class>com.force.sevlets.NewProject</servlet-class>
@@ -85,6 +63,5 @@
         <servlet-name>NewProject</servlet-name>
         <url-pattern>/NewProject</url-pattern>
     </servlet-mapping>
-
 
 </web-app>
