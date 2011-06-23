@@ -1,7 +1,6 @@
-package com.force.sevlets;
+package com.force.servlets;
 
 import com.force.model.Project;
-import com.force.model.Task;
 import com.force.service.DatabaseService;
 
 import javax.servlet.ServletException;
@@ -17,23 +16,17 @@ import java.io.IOException;
  * Time: 9:29 AM
  * To change this template use File | Settings | File Templates.
  */
-public class SaveTask extends HttpServlet {
+public class SaveProject extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Task task = new Task();
-        task.setId((request.getParameter("id")));
-        task.setName((request.getParameter("name")));
-        task.setDesc((request.getParameter("desc")));
-        if (request.getParameter("project_id") != null) {
-            DatabaseService.saveTask(request.getParameter("project_id").toString(), task);
-            response.sendRedirect("NewProject?id="+request.getParameter("project_id").toString());
-        }
-        else {
-            DatabaseService.saveTask(task);
-            response.sendRedirect("TaskList");
-        }
+        Project project = new Project();
+        project.setId(request.getParameter("id"));
+        project.setName(request.getParameter("name"));
+        project.setDesc(request.getParameter("desc"));
+        DatabaseService.saveProject(project);
+        response.sendRedirect("ProjectList");
     }
 }

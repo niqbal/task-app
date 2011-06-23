@@ -22,7 +22,7 @@
     <servlet>
         <display-name>SaveProject</display-name>
         <servlet-name>SaveProject</servlet-name>
-        <servlet-class>com.force.sevlets.SaveProject</servlet-class>
+        <servlet-class>com.force.servlets.SaveProject</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -33,7 +33,7 @@
     <servlet>
         <display-name>SaveTask</display-name>
         <servlet-name>SaveTask</servlet-name>
-        <servlet-class>com.force.sevlets.SaveTask</servlet-class>
+        <servlet-class>com.force.servlets.SaveTask</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -45,7 +45,7 @@
     <servlet>
         <display-name>ProjectList</display-name>
         <servlet-name>ProjectList</servlet-name>
-        <servlet-class>com.force.sevlets.ProjectList</servlet-class>
+        <servlet-class>com.force.servlets.ProjectList</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
@@ -56,7 +56,7 @@
     <servlet>
         <display-name>NewProject</display-name>
         <servlet-name>NewProject</servlet-name>
-        <servlet-class>com.force.sevlets.NewProject</servlet-class>
+        <servlet-class>com.force.servlets.NewProject</servlet-class>
         <load-on-startup>0</load-on-startup>
     </servlet>
     <servlet-mapping>
