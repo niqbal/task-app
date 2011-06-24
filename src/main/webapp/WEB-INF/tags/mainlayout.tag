@@ -1,3 +1,4 @@
+<%@ tag import="com.force.sdk.connector.ForceServiceConnector" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ attribute name="breadcrumb" required="true" rtexprvalue="true"%>
 <%@ attribute name="hidesearch" required="false" rtexprvalue="false"%>
@@ -15,7 +16,15 @@
 		</div>
 	</form>
 	<div id="content">
-	
+        <%
+            ForceServiceConnector c = new ForceServiceConnector();
+            request.setAttribute("name", c.getConnection().getUserInfo().getUserName());
+            request.setAttribute("orgName", c.getConnection().getUserInfo().getOrganizationName());
+            request.setAttribute("orgId", c.getConnection().getUserInfo().getOrganizationId());
+        %>
+        Hello <%=c.getConnection().getUserInfo().getUserName()%>,
+        <p></p>
+        You are logged on to organization ${orgName} (Organization Id: ${orgId}).
 		<jsp:doBody/>
 	
 	</div>
