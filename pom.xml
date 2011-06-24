@@ -12,7 +12,7 @@
 		<java-version>1.6</java-version>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
-		<force.sdk.version>21.0.2-BETA</force.sdk.version>
+		<force.sdk.version>22.0.2-SNAPSHOT</force.sdk.version>
 	</properties>
 
 	<dependencies>
