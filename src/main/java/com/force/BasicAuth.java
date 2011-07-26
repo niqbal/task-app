@@ -1,6 +1,6 @@
 package com.force;
 
-import org.apache.commons.codec.binary.Base64;
+import com.sforce.ws.util.Base64;
 
 import javax.servlet.*;
 import javax.servlet.http.HttpServletRequest;
@@ -14,15 +14,9 @@ import java.io.IOException;
 * @author Timo B. Huebel (me@tbh.name) (initial creation)
 */
 public class BasicAuth implements Filter {
-
-    public static final String PARAM_USER = "user";
-    public static final String PARAM_PASSWORD = "password";
-    public static final String PARAM_REALM = "realm";
-
-    // valid values: read from 'db'
-    private String _user;
-    private String _password;
-    private String _realm;
+    private String _user = "u2";
+    private String _password = "passwd";
+    private String _realm = "realm";
 
     @Override
     public void destroy() {
@@ -41,7 +35,7 @@ public class BasicAuth implements Filter {
 
             final int index = auth.indexOf( ' ' );
             if ( index > 0 ) {
-                final String[] credentials = new String(Base64.decodeBase64(auth.substring(index).getBytes()), "UTF8")
+                final String[] credentials = new String(Base64.decode(auth.substring(index).trim().getBytes()), "UTF8")
                         .split(":");
 
                 if ( credentials.length == 2 && _user.equals( credentials[0] ) && _password.equals( credentials[1] ) ) {
@@ -59,14 +53,18 @@ public class BasicAuth implements Filter {
         return str == null || "".equals(str);
     }
 
+
     @Override
     public void init(final FilterConfig config ) throws ServletException {
+        final String PARAM_USER = "user";
+        final String PARAM_PASSWORD = "password";
+        final String PARAM_REALM = "realm";
 
-        _user = config.getInitParameter( PARAM_USER );
+    /*    _user = ;
         _password = config.getInitParameter( PARAM_PASSWORD );
         _realm = config.getInitParameter( PARAM_REALM );
 
-        if ( isBlank( _user ) ) {
+        if ( !isBlank( config.getInitParameter( PARAM_USER ) ) ) {
             throw new ServletException( "No user provided in filter configuration" );
         }
 
@@ -77,5 +75,6 @@ public class BasicAuth implements Filter {
         if ( isBlank( _realm ) ) {
             throw new ServletException( "No realm provided in filter configuration" );
         }
+        */
     }
 }
