@@ -13,7 +13,7 @@
         <jettyVersion>7.3.1.v20110307</jettyVersion>
 		<org.aspectj-version>1.6.9</org.aspectj-version>
 		<org.slf4j-version>1.5.10</org.slf4j-version>
-		<force.sdk.version>22.0.2-SNAPSHOT</force.sdk.version>
+		<force.sdk.version>22.0.3-SNAPSHOT</force.sdk.version>
 	</properties>
 
 	<dependencies>
@@ -87,6 +87,14 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>el-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+
 
 		<!-- @Inject -->
 		<dependency>
