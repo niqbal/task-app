@@ -6,7 +6,9 @@
 
 	<persistence-unit name="forceDatabase">
 		<provider>com.force.sdk.jpa.PersistenceProviderImpl</provider>
-		<!-- In a single module web application, no need to specify classes. Classes 
+        <class>com.force.model.Project</class>
+        <class>com.force.model.Task</class>
+		<!-- In a single module web application, no need to specify classes. Classes
 			will be autodiscovered based on @Entity annotation -->
 		<properties>
 			<property name="datanucleus.storeManagerType" value="force" />

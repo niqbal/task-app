@@ -1,5 +1,6 @@
 package com.force.servlets;
 
+import com.force.model.Project;
 import com.force.service.DatabaseService;
 
 import javax.servlet.RequestDispatcher;
@@ -24,6 +25,7 @@ public class ProjectList extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List list = DatabaseService.getList("Project");
+        list.add(new Project());
         request.setAttribute("list",list);
         System.out.println(list.size() + " projects.");
 		RequestDispatcher rd = getServletContext().getRequestDispatcher("/project_list.jsp");
