@@ -19,7 +19,7 @@ import java.util.logging.Logger;
  */
 public class DatabaseService {
 
-    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("forceDatabase");
+    public static EntityManagerFactory emf = Persistence.createEntityManagerFactory("badname");
 
     public static Logger logger = Logger.getLogger("com.force.service.DatabaseService");
 

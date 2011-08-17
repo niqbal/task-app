@@ -4,11 +4,12 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
 	version="2.0">
 
-	<persistence-unit name="forceDatabase">
+	<persistence-unit name="badname">
 		<provider>com.force.sdk.jpa.PersistenceProviderImpl</provider>
 		<!-- In a single module web application, no need to specify classes. Classes 
 			will be autodiscovered based on @Entity annotation -->
 		<properties>
+            <property name="datanucleus.ConnectionURL" value="${localurl}" />
 			<property name="datanucleus.storeManagerType" value="force" />
 			<property name="datanucleus.autoCreateSchema" value="true" />
 			<property name="datanucleus.validateTables" value="false" />
