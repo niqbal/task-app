@@ -2,10 +2,6 @@ import com.force.BasicAuth;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 
-import javax.servlet.FilterConfig;
-import javax.servlet.ServletContext;
-import java.util.Enumeration;
-
 /**
  *
  * This class launches the web application in an embedded Jetty container.
@@ -15,29 +11,6 @@ import java.util.Enumeration;
  * @author John Simone
  */
 public class Main {
-
-    public class BasicFilterConfig implements FilterConfig {
-
-        @Override
-        public String getFilterName() {
-            return null;  //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public ServletContext getServletContext() {
-            return null;  //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public String getInitParameter(String name) {
-            return null;  //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        public Enumeration getInitParameterNames() {
-            return null;  //To change body of implemented methods use File | Settings | File Templates.
-        }
-    }
 
     /**
      * @param args
@@ -60,6 +33,7 @@ public class Main {
         root.setResourceBase(webappDirLocation);
         root.setParentLoaderPriority(true);
 
+        System.out.println("Installed  BasicHttpAuth filter from Main.main()");
         root.addFilter(BasicAuth.class, "/*", 31);
 
         server.setHandler(root);
