@@ -13,7 +13,7 @@
 
     <!-- SFDC OAuth security config -->
     <fss:oauth logout-from-force-dot-com="true">
-    	<fss:connectionName name="forceDatabase"/>
+    	<fss:connectionUrl url="${localurl}"/>
    	</fss:oauth>
 
 
