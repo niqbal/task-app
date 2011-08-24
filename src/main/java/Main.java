@@ -1,4 +1,3 @@
-import com.force.BasicAuth;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.webapp.WebAppContext;
 
@@ -34,7 +33,7 @@ public class Main {
         root.setParentLoaderPriority(true);
 
         System.out.println("Installed  BasicHttpAuth filter from Main.main()");
-        root.addFilter(BasicAuth.class, "/*", 31);
+        //root.addFilter(BasicAuth.class, "/*", 31);
 
         server.setHandler(root);
         server.start();
