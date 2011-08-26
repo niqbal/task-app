@@ -301,6 +301,8 @@
 				<configuration>
 					<api>JPA</api>
 					<verbose>true</verbose>
+					<!-- excluding servlets; so DataNucleus does not try to enhance them -->
+					<metadataExcludes>**/servlets/*.class</metadataExcludes>
 				</configuration>
 				<executions>
 					<execution>

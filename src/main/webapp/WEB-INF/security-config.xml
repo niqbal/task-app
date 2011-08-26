@@ -15,7 +15,7 @@
 
     <!-- SFDC OAuth security config -->
     <fss:oauth logout-from-force-dot-com="true">
-    	<fss:connectionUrl url="${localurl}"/>
+    	<fss:connectionUrl url="${DATABASE_COM_URL}"/>
    	</fss:oauth>
 
 

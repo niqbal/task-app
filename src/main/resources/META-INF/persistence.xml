@@ -9,7 +9,7 @@
 		<!-- In a single module web application, no need to specify classes. Classes 
 			will be autodiscovered based on @Entity annotation -->
 		<properties>
-            <property name="datanucleus.ConnectionURL" value="${localurl}" />
+			<property name="datanucleus.ConnectionURL" value="${DATABASE_COM_URL}" />
 			<property name="datanucleus.storeManagerType" value="force" />
 			<property name="datanucleus.autoCreateSchema" value="true" />
 			<property name="datanucleus.validateTables" value="false" />
